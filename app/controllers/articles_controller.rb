@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id].to_i)
   end
 
   def new
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id].to_i)
   end
 
   def update
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id].to_i)
     @article.destroy
 
     redirect_to root_path, status: :see_other
